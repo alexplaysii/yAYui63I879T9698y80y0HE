@@ -1,3 +1,5 @@
+if game.PlaceId == 1033860623 then
+
 -- Gui to Lua
 -- Version: 3.2
 
@@ -254,3 +256,4 @@ local function ALGTAPV_fake_script() -- Frame.scripty
 	con = workspace.GameState.Core.Temperature.Changed:Connect(changedthevalue)
 end
 coroutine.wrap(ALGTAPV_fake_script)()
+end
