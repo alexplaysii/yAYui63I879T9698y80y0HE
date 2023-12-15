@@ -17,7 +17,7 @@ local tempwarning = Instance.new("TextLabel")
 --Properties:
 
 ArcticUI.Name = "ArcticUI"
-ArcticUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ArcticUI.Parent = game.CoreGui
 ArcticUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Frame.Parent = ArcticUI
@@ -77,6 +77,7 @@ temp.Position = UDim2.new(0, 0, 1.03199995, 0)
 temp.Size = UDim2.new(0, 200, 0, 43)
 temp.Font = Enum.Font.FredokaOne
 temp.Text = "..."
+temp.FontFace.Weight = Enum.FontWeight.Bold
 temp.TextColor3 = Color3.fromRGB(0, 0, 0)
 temp.TextScaled = true
 temp.TextSize = 14.000
@@ -128,77 +129,10 @@ tempwarning.TextWrapped = true
 
 -- Scripts:
 
-local function QZJA_fake_script() -- Temp.LocalScript 
-	local script = Instance.new('LocalScript', Temp)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.temp.LocalScript.Disabled = not script.Parent.Parent.temp.LocalScript.Disabled
-		script.Parent.Parent.temp.Text = script.Parent.Parent.temp.LocalScript.Disabled and "0FF" or "..."
-	end)
-end
-coroutine.wrap(QZJA_fake_script)()
-local function HNYY_fake_script() -- Cool.LocalScript 
-	local script = Instance.new('LocalScript', Cool)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		fireclickdetector(workspace.Core.Pump2Buttons["2"].ClickDetector)
-		fireclickdetector(workspace.Core.Pump1Buttons["2"].ClickDetector)
-		fireclickdetector(workspace.Core.FanButtons["4"].ClickDetector)
-	end)
-	
-	
-	
-	
-	
-	
-end
-coroutine.wrap(HNYY_fake_script)()
-local function EHHAOJL_fake_script() -- NotCool.LocalScript 
-	local script = Instance.new('LocalScript', NotCool)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		fireclickdetector(workspace.Core.Pump2Buttons["0"].ClickDetector)
-		fireclickdetector(workspace.Core.Pump1Buttons["0"].ClickDetector)
-		fireclickdetector(workspace.Core.FanButtons["0"].ClickDetector)
-	end)
-	
-	
-	
-	
-	
-	
-end
-coroutine.wrap(EHHAOJL_fake_script)()
-local function XCXLFVU_fake_script() -- Battery.LocalScript 
-	local script = Instance.new('LocalScript', Battery)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		local lastpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-		for i,v in ipairs(workspace:GetDescendants()) do
-			if v.Name == "Center" and v.Parent.Name == "EnergyCore" and not v:FindFirstAncestor("Bunker") then
-				game.Players.LocalPlayer.Character:PivotTo(v.CFrame)
-				task.wait(.1)
-				for i2,v2 in ipairs(workspace.Bunker.Cores:GetDescendants()) do
-					if v2.Name == "Hitbox" then
-						game.Players.LocalPlayer.Character:PivotTo(v2.CFrame)
-						task.wait(.1)
-					end
-				end
-			end
-		end
-		game.Players.LocalPlayer.Character:PivotTo(lastpos)
-	end)
-	
-	
-	
-	
-	
-end
-coroutine.wrap(XCXLFVU_fake_script)()
-local function GQGLZLA_fake_script() -- Frame.scripty 
+local function ALGTAPV_fake_script() -- Frame.scripty 
 	local script = Instance.new('LocalScript', Frame)
 
-	local TEMPNO = true
+	local TEMPNO = false
 	local con 
 	
 	local function changedthevalue(val)
@@ -319,4 +253,4 @@ local function GQGLZLA_fake_script() -- Frame.scripty
 	
 	con = workspace.GameState.Core.Temperature.Changed:Connect(changedthevalue)
 end
-coroutine.wrap(GQGLZLA_fake_script)()
+coroutine.wrap(ALGTAPV_fake_script)()
