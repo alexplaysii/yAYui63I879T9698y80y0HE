@@ -138,7 +138,7 @@ local function ALGTAPV_fake_script() -- Frame.scripty
 	local con 
 	
 	local function changedthevalue(val)
-		
+		if TEMPNO == true then return end
 		local coretemp = math.floor(val)
 		
 		if coretemp < 1000 then
