@@ -1,5 +1,5 @@
 if game.PlaceId == 1033860623 then
-
+	
 -- Gui to Lua
 -- Version: 3.2
 
@@ -15,6 +15,16 @@ local UICorner = Instance.new("UICorner")
 local NotCool = Instance.new("TextButton")
 local Battery = Instance.new("TextButton")
 local tempwarning = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local TextLabel_4 = Instance.new("TextLabel")
+local P1Stats = Instance.new("TextLabel")
+local P1TankLeft = Instance.new("TextLabel")
+local TextLabel_5 = Instance.new("TextLabel")
+local P2Stats = Instance.new("TextLabel")
+local P2TankLeft = Instance.new("TextLabel")
+local TextLabel_6 = Instance.new("TextLabel")
+local FanSpd = Instance.new("TextLabel")
 
 --Properties:
 
@@ -26,16 +36,16 @@ Frame.Parent = ArcticUI
 Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(0.0521945432, 0, 0.122691296, 0)
-Frame.Size = UDim2.new(0, 200, 0, 250)
+Frame.Position = UDim2.new(0.0521945395, 0, 0.122691296, 0)
+Frame.Size = UDim2.new(0, 200, 0, 310)
 
 Temp.Name = "Temp"
 Temp.Parent = Frame
 Temp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Temp.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Temp.BorderSizePixel = 0
-Temp.Position = UDim2.new(0, 0, -0.00355737307, 0)
-Temp.Size = UDim2.new(0, 200, 0, 70)
+Temp.Position = UDim2.new(0, 0, -0.00355736515, 0)
+Temp.Size = UDim2.new(0, 200, 0, 40)
 Temp.Font = Enum.Font.SourceSansBold
 Temp.Text = "temp reading display"
 Temp.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -48,8 +58,8 @@ Cool.Parent = Frame
 Cool.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Cool.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Cool.BorderSizePixel = 0
-Cool.Position = UDim2.new(0, 0, 0.274273187, 0)
-Cool.Size = UDim2.new(0, 200, 0, 50)
+Cool.Position = UDim2.new(0, 0, 0.122660287, 0)
+Cool.Size = UDim2.new(0, 200, 0, 40)
 Cool.Font = Enum.Font.SourceSansBold
 Cool.Text = "cooling ON"
 Cool.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -61,7 +71,7 @@ TextLabel.Parent = Frame
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0, 0, 0.931999981, 0)
+TextLabel.Position = UDim2.new(-0.00499999989, 0, 0.957806408, 0)
 TextLabel.Size = UDim2.new(0, 200, 0, 25)
 TextLabel.Font = Enum.Font.FredokaOne
 TextLabel.Text = "temperature reading:"
@@ -75,11 +85,10 @@ temp.Parent = Frame
 temp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 temp.BorderColor3 = Color3.fromRGB(0, 0, 0)
 temp.BorderSizePixel = 0
-temp.Position = UDim2.new(0, 0, 1.03199995, 0)
+temp.Position = UDim2.new(-0.00499999989, 0, 1.03845155, 0)
 temp.Size = UDim2.new(0, 200, 0, 43)
 temp.Font = Enum.Font.FredokaOne
 temp.Text = "..."
-temp.FontFace.Weight = Enum.FontWeight.Bold
 temp.TextColor3 = Color3.fromRGB(0, 0, 0)
 temp.TextScaled = true
 temp.TextSize = 14.000
@@ -92,8 +101,8 @@ NotCool.Parent = Frame
 NotCool.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 NotCool.BorderColor3 = Color3.fromRGB(0, 0, 0)
 NotCool.BorderSizePixel = 0
-NotCool.Position = UDim2.new(0, 0, 0.474273205, 0)
-NotCool.Size = UDim2.new(0, 200, 0, 50)
+NotCool.Position = UDim2.new(0, 0, 0.251692533, 0)
+NotCool.Size = UDim2.new(0, 200, 0, 40)
 NotCool.Font = Enum.Font.SourceSansBold
 NotCool.Text = "cooling OFF"
 NotCool.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -106,8 +115,8 @@ Battery.Parent = Frame
 Battery.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Battery.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Battery.BorderSizePixel = 0
-Battery.Position = UDim2.new(0, 0, 0.674273193, 0)
-Battery.Size = UDim2.new(0, 200, 0, 50)
+Battery.Position = UDim2.new(0, 0, 0.380724788, 0)
+Battery.Size = UDim2.new(0, 200, 0, 40)
 Battery.Font = Enum.Font.SourceSansBold
 Battery.Text = "grab all batteries only during meltdown"
 Battery.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -120,27 +129,167 @@ tempwarning.Parent = Frame
 tempwarning.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 tempwarning.BorderColor3 = Color3.fromRGB(0, 0, 0)
 tempwarning.BorderSizePixel = 0
-tempwarning.Position = UDim2.new(0, 0, 1.204, 0)
+tempwarning.Position = UDim2.new(-0.00499999989, 0, 1.17496777, 0)
 tempwarning.Size = UDim2.new(0, 200, 0, 20)
-tempwarning.Font = Enum.Font.Unknown
 tempwarning.Text = "..."
 tempwarning.TextColor3 = Color3.fromRGB(0, 0, 0)
 tempwarning.TextScaled = true
 tempwarning.TextSize = 14.000
 tempwarning.TextWrapped = true
 
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0, 0, 0.509419322, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 25)
+TextLabel_2.Font = Enum.Font.FredokaOne
+TextLabel_2.Text = "--------------------"
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+TextLabel_3.Parent = Frame
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Position = UDim2.new(0, 0, 0.590064466, 0)
+TextLabel_3.Size = UDim2.new(0, 200, 0, 25)
+TextLabel_3.Font = Enum.Font.FredokaOne
+TextLabel_3.Text = "Pump Status:"
+TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextWrapped = true
+
+TextLabel_4.Parent = Frame
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_4.BorderSizePixel = 0
+TextLabel_4.Position = UDim2.new(0, 0, 0.67070961, 0)
+TextLabel_4.Size = UDim2.new(0, 87, 0, 25)
+TextLabel_4.Font = Enum.Font.FredokaOne
+TextLabel_4.Text = "PUMP 1:"
+TextLabel_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_4.TextScaled = true
+TextLabel_4.TextSize = 14.000
+TextLabel_4.TextWrapped = true
+
+P1Stats.Name = "P1Stats"
+P1Stats.Parent = Frame
+P1Stats.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+P1Stats.BorderColor3 = Color3.fromRGB(0, 0, 0)
+P1Stats.BorderSizePixel = 0
+P1Stats.Position = UDim2.new(0.435000002, 0, 0.67070961, 0)
+P1Stats.Size = UDim2.new(0, 57, 0, 25)
+P1Stats.Font = Enum.Font.FredokaOne
+P1Stats.Text = "???"
+P1Stats.TextColor3 = Color3.fromRGB(255, 0, 0)
+P1Stats.TextScaled = true
+P1Stats.TextSize = 14.000
+P1Stats.TextWrapped = true
+
+P1TankLeft.Name = "P1TankLeft"
+P1TankLeft.Parent = Frame
+P1TankLeft.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+P1TankLeft.BorderColor3 = Color3.fromRGB(0, 0, 0)
+P1TankLeft.BorderSizePixel = 0
+P1TankLeft.Position = UDim2.new(0.720000029, 0, 0.67070961, 0)
+P1TankLeft.Size = UDim2.new(0, 56, 0, 25)
+P1TankLeft.Font = Enum.Font.FredokaOne
+P1TankLeft.Text = "??%"
+P1TankLeft.TextColor3 = Color3.fromRGB(0, 0, 0)
+P1TankLeft.TextScaled = true
+P1TankLeft.TextSize = 14.000
+P1TankLeft.TextWrapped = true
+
+TextLabel_5.Parent = Frame
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_5.BorderSizePixel = 0
+TextLabel_5.Position = UDim2.new(0, 0, 0.751354754, 0)
+TextLabel_5.Size = UDim2.new(0, 87, 0, 25)
+TextLabel_5.Font = Enum.Font.FredokaOne
+TextLabel_5.Text = "PUMP 2:"
+TextLabel_5.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_5.TextScaled = true
+TextLabel_5.TextSize = 14.000
+TextLabel_5.TextWrapped = true
+
+P2Stats.Name = "P2Stats"
+P2Stats.Parent = Frame
+P2Stats.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+P2Stats.BorderColor3 = Color3.fromRGB(0, 0, 0)
+P2Stats.BorderSizePixel = 0
+P2Stats.Position = UDim2.new(0.435000002, 0, 0.751354754, 0)
+P2Stats.Size = UDim2.new(0, 57, 0, 25)
+P2Stats.Font = Enum.Font.FredokaOne
+P2Stats.Text = "???"
+P2Stats.TextColor3 = Color3.fromRGB(255, 0, 0)
+P2Stats.TextScaled = true
+P2Stats.TextSize = 14.000
+P2Stats.TextWrapped = true
+
+P2TankLeft.Name = "P2TankLeft"
+P2TankLeft.Parent = Frame
+P2TankLeft.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+P2TankLeft.BorderColor3 = Color3.fromRGB(0, 0, 0)
+P2TankLeft.BorderSizePixel = 0
+P2TankLeft.Position = UDim2.new(0.720000029, 0, 0.751354754, 0)
+P2TankLeft.Size = UDim2.new(0, 56, 0, 25)
+P2TankLeft.Font = Enum.Font.FredokaOne
+P2TankLeft.Text = "??%"
+P2TankLeft.TextColor3 = Color3.fromRGB(0, 0, 0)
+P2TankLeft.TextScaled = true
+P2TankLeft.TextSize = 14.000
+P2TankLeft.TextWrapped = true
+
+TextLabel_6.Parent = Frame
+TextLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_6.BorderSizePixel = 0
+TextLabel_6.Position = UDim2.new(0, 0, 0.831999958, 0)
+TextLabel_6.Size = UDim2.new(0, 119, 0, 25)
+TextLabel_6.Font = Enum.Font.FredokaOne
+TextLabel_6.Text = "FAN SPEED:"
+TextLabel_6.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_6.TextScaled = true
+TextLabel_6.TextSize = 14.000
+TextLabel_6.TextWrapped = true
+
+FanSpd.Name = "FanSpd"
+FanSpd.Parent = Frame
+FanSpd.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FanSpd.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FanSpd.BorderSizePixel = 0
+FanSpd.Position = UDim2.new(0.594999909, 0, 0.831999958, 0)
+FanSpd.Size = UDim2.new(0, 81, 0, 25)
+FanSpd.Font = Enum.Font.FredokaOne
+FanSpd.Text = "?"
+FanSpd.TextColor3 = Color3.fromRGB(0, 0, 0)
+FanSpd.TextScaled = true
+FanSpd.TextSize = 14.000
+FanSpd.TextWrapped = true
+
 -- Scripts:
 
-local function ALGTAPV_fake_script() -- Frame.scripty 
+local function DZOG_fake_script() -- Frame.scripty 
 	local script = Instance.new('LocalScript', Frame)
 
+	--local script = Instance.new('LocalScript', Frame)
+
 	local TEMPNO = false
+
 	local con 
-	
+	local p1con
+	local p2con
+	local fancon
+
 	local function changedthevalue(val)
 		if TEMPNO == true then return end
 		local coretemp = math.floor(val)
-		
+
 		if coretemp < 1000 then
 			script.Parent.tempwarning.Text = "✅ Normal Temperature"
 			script.Parent.tempwarning.TextColor3 = Color3.fromRGB(0, 150, 0)
@@ -162,11 +311,81 @@ local function ALGTAPV_fake_script() -- Frame.scripty
 			script.Parent.tempwarning.TextColor3 = Color3.fromRGB(150, 0, 0)
 			script.Parent.temp.TextColor3 = Color3.fromRGB(150, 0, 0)
 		end
-		
+
 		script.Parent.temp.Text = coretemp
-		
+
 	end
-	
+
+	local function thething2()
+		while task.wait() do
+			if TEMPNO == true then 
+
+				script.Parent.P1Stats.Text = "Disabled"
+				script.Parent.P1Stats.TextColor3 = Color3.fromRGB(255, 0, 0)
+				script.Parent.P2Stats.Text = "Disabled"
+				script.Parent.P2Stats.TextColor3 = Color3.fromRGB(255, 0, 0)
+				script.Parent.FanSpd.Text = "Disabled"
+				script.Parent.FanSpd.TextColor3 = Color3.fromRGB(255, 0, 0)
+
+				script.Parent.P1TankLeft.Text = "N/A"
+				script.Parent.P2TankLeft.Text = "N/A"
+				break 
+			end
+
+			if tonumber(string.format("%.3f", tostring(workspace.Core.Pump2.Spinny.MotorPart.Motor.MaxVelocity))) == 0.1 then
+				script.Parent.P1Stats.Text = "2"
+				script.Parent.P1Stats.TextColor3 = Color3.fromRGB(0, 255, 0)
+			elseif tonumber(string.format("%.3f", tostring(workspace.Core.Pump2.Spinny.MotorPart.Motor.MaxVelocity))) == 0.05 then
+				script.Parent.P1Stats.Text = "1"
+				script.Parent.P1Stats.TextColor3 = Color3.fromRGB(0, 255, 0)
+			elseif workspace.Core.Pump1.Spinny.MotorPart.Motor.MaxVelocity > 0 then
+				script.Parent.P1Stats.TextColor3 = Color3.fromRGB(255, 255, 0)
+				script.Parent.P1Stats.Text = "..."
+			elseif workspace.Core.Pump1.Spinny.MotorPart.Motor.MaxVelocity == 0 then
+				script.Parent.P1Stats.TextColor3 = Color3.fromRGB(255, 0, 0)
+				script.Parent.P1Stats.Text = "OFF"
+			end
+
+			if tonumber(string.format("%.3f", tostring(workspace.Core.Pump2.Spinny.MotorPart.Motor.MaxVelocity))) == 0.1 then
+				script.Parent.P2Stats.Text = "2"
+				script.Parent.P2Stats.TextColor3 = Color3.fromRGB(0, 255, 0)
+			elseif tonumber(string.format("%.3f", tostring(workspace.Core.Pump2.Spinny.MotorPart.Motor.MaxVelocity))) == 0.05 then
+				script.Parent.P2Stats.Text = "1"
+				script.Parent.P2Stats.TextColor3 = Color3.fromRGB(0, 255, 0)
+			elseif workspace.Core.Pump2.Spinny.MotorPart.Motor.MaxVelocity > 0 then
+				script.Parent.P2Stats.TextColor3 = Color3.fromRGB(255, 255, 0)
+				script.Parent.P2Stats.Text = "..."
+			elseif workspace.Core.Pump2.Spinny.MotorPart.Motor.MaxVelocity == 0 then
+				script.Parent.P2Stats.TextColor3 = Color3.fromRGB(255, 0, 0)
+				script.Parent.P2Stats.Text = "OFF"
+			end
+
+			if  tonumber(string.format("%.3f", tostring(workspace.Core.MainFan.Centre.Motor.MaxVelocity))) == 0.05 then
+				script.Parent.FanSpd.Text = "4"
+				script.Parent.FanSpd.TextColor3 = Color3.fromRGB(0, 255, 0)
+			elseif tonumber(string.format("%.3f", tostring(workspace.Core.MainFan.Centre.Motor.MaxVelocity))) == 0.038 then
+				script.Parent.FanSpd.Text = "3"
+				script.Parent.FanSpd.TextColor3 = Color3.fromRGB(0, 255, 0)
+			elseif tonumber(string.format("%.3f", tostring(workspace.Core.MainFan.Centre.Motor.MaxVelocity))) == 0.025 then
+				script.Parent.FanSpd.Text = "2"
+				script.Parent.FanSpd.TextColor3 = Color3.fromRGB(0, 255, 0)
+			elseif tonumber(string.format("%.3f", tostring(workspace.Core.MainFan.Centre.Motor.MaxVelocity))) == 0.012 then
+				script.Parent.FanSpd.Text = "1"
+				script.Parent.FanSpd.TextColor3 = Color3.fromRGB(0, 255, 0)
+			elseif workspace.Core.MainFan.Centre.Motor.MaxVelocity > 0 then
+				script.Parent.FanSpd.TextColor3 = Color3.fromRGB(255, 255, 0)
+				script.Parent.FanSpd.Text = "..."
+			elseif workspace.Core.MainFan.Centre.Motor.MaxVelocity == 0 then
+				script.Parent.FanSpd.Text = "OFF"
+				script.Parent.FanSpd.TextColor3 = Color3.fromRGB(255, 0, 0)
+			end
+
+			script.Parent.P1TankLeft.Text = math.floor(workspace.GameState.Core.Coolant1.Value).."%"
+			script.Parent.P2TankLeft.Text = math.floor(workspace.GameState.Core.Coolant2.Value).."%"
+
+		end
+	end
+
 	task.spawn(function()
 		local UIS = game:GetService("UserInputService")
 		function dragify(Frame)
@@ -205,7 +424,7 @@ local function ALGTAPV_fake_script() -- Frame.scripty
 		end
 		dragify(script.Parent)
 	end)
-	
+
 	script.Parent.Temp.MouseButton1Click:Connect(function()
 		if TEMPNO == true then
 			TEMPNO = false
@@ -214,6 +433,7 @@ local function ALGTAPV_fake_script() -- Frame.scripty
 			script.Parent.tempwarning.Text =  "..."
 			script.Parent.temp.TextColor3 = Color3.fromRGB(0, 0, 0)
 			con = workspace.GameState.Core.Temperature.Changed:Connect(changedthevalue)
+			task.spawn(thething2)
 		elseif TEMPNO == false then
 			con:Disconnect()
 			script.Parent.temp.Text = "OFF"
@@ -223,7 +443,7 @@ local function ALGTAPV_fake_script() -- Frame.scripty
 			TEMPNO = true
 		end
 	end)
-	
+
 	script.Parent.Battery.MouseButton1Click:Connect(function()
 		local lastpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		for i,v in ipairs(workspace:GetDescendants()) do
@@ -240,20 +460,48 @@ local function ALGTAPV_fake_script() -- Frame.scripty
 		end
 		game.Players.LocalPlayer.Character:PivotTo(lastpos)
 	end)
-	
+
 	script.Parent.Cool.MouseButton1Click:Connect(function()
 		fireclickdetector(workspace.Core.Pump2Buttons["2"].ClickDetector)
 		fireclickdetector(workspace.Core.Pump1Buttons["2"].ClickDetector)
 		fireclickdetector(workspace.Core.FanButtons["4"].ClickDetector)
 	end)
-	
+
 	script.Parent.NotCool.MouseButton1Click:Connect(function()
 		fireclickdetector(workspace.Core.Pump2Buttons["0"].ClickDetector)
 		fireclickdetector(workspace.Core.Pump1Buttons["0"].ClickDetector)
 		fireclickdetector(workspace.Core.FanButtons["0"].ClickDetector)
 	end)
-	
+
+	local coretemp = math.floor(workspace.GameState.Core.Temperature.Value)
+
+	if coretemp < 1000 then
+		script.Parent.tempwarning.Text = "✅ Normal Temperature"
+		script.Parent.tempwarning.TextColor3 = Color3.fromRGB(0, 150, 0)
+		script.Parent.temp.TextColor3 = Color3.fromRGB(0, 150, 0)
+	elseif coretemp >= 1000 and coretemp < 1500 then
+		script.Parent.tempwarning.Text = "It's getting a bit hot!"
+		script.Parent.tempwarning.TextColor3 = Color3.fromRGB(255, 100, 0)
+		script.Parent.temp.TextColor3 = Color3.fromRGB(255, 100, 0)
+	elseif coretemp >= 1500 and coretemp < 1750 then
+		script.Parent.tempwarning.Text = "High Temperature!"
+		script.Parent.tempwarning.TextColor3 = Color3.fromRGB(255, 50, 0)
+		script.Parent.temp.TextColor3 = Color3.fromRGB(255, 50, 0)
+	elseif coretemp >= 1750 and coretemp < 2000 then
+		script.Parent.tempwarning.Text = "🚨 Very High Temperature!"
+		script.Parent.tempwarning.TextColor3 = Color3.fromRGB(255, 0, 0)
+		script.Parent.temp.TextColor3 = Color3.fromRGB(255, 0, 0)
+	elseif coretemp >= 2000 then
+		script.Parent.tempwarning.Text = "WARNING: CORE CRITICAL"
+		script.Parent.tempwarning.TextColor3 = Color3.fromRGB(150, 0, 0)
+		script.Parent.temp.TextColor3 = Color3.fromRGB(150, 0, 0)
+	end
+
+	script.Parent.temp.Text = coretemp
+
 	con = workspace.GameState.Core.Temperature.Changed:Connect(changedthevalue)
+	task.spawn(thething2)
 end
-coroutine.wrap(ALGTAPV_fake_script)()
+coroutine.wrap(DZOG_fake_script)()
+
 end
