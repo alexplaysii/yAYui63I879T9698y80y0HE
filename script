@@ -369,7 +369,7 @@ local function DZOG_fake_script() -- Frame.scripty
 			elseif tonumber(string.format("%.3f", tostring(workspace.Core.MainFan.Centre.Motor.MaxVelocity))) == 0.025 then
 				script.Parent.FanSpd.Text = "2"
 				script.Parent.FanSpd.TextColor3 = Color3.fromRGB(0, 255, 0)
-			elseif tonumber(string.format("%.3f", tostring(workspace.Core.MainFan.Centre.Motor.MaxVelocity))) == 0.012 then
+			elseif tonumber(string.format("%.3f", tostring(workspace.Core.MainFan.Centre.Motor.MaxVelocity))) == 0.013 then
 				script.Parent.FanSpd.Text = "1"
 				script.Parent.FanSpd.TextColor3 = Color3.fromRGB(0, 255, 0)
 			elseif workspace.Core.MainFan.Centre.Motor.MaxVelocity > 0 then
